@@ -134,7 +134,7 @@ public class AddressbookUI extends UI {
         contactForm.setVisible(false);
     }
 
-    /*
+    /*******
      * Deployed as a Servlet or Portlet.
      *
      * You can specify additional servlet parameters like the URI and UI class
