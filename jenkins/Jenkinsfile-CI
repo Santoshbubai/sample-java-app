@@ -29,6 +29,17 @@ pipeline {
                    junit 'target/surefire-reports/*.xml'
                }
            }			
+        } 
+	stage('code-coverage') {
+	   steps {
+                echo 'codecoverage..'
+		sh script: '/opt/maven/bin/mvn verify'
+           }
+	   post {
+               success {
+		   jacoco changeBuildStatus: true, runAlways: true, skipCopyOfSrcFiles: true
+               }
+           }		
         }
         stage('package') {
 	   steps {
